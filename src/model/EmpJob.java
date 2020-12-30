@@ -1,15 +1,10 @@
 package model;
 
 public class EmpJob {
+	private int ejId;
 	private int employeeId;
-	private String firstName;
-	private String lastName;
-	private String email;
-	private String userId;
-	private String password;
-	private String role;
-	private String gender;
-	private String active;
+	private int jobId;
+	private String recruited;
 	
 	//Default Constructor
 	
@@ -20,96 +15,56 @@ public class EmpJob {
 	
 	//parameterized constructor method will all fields
 	
-	public EmpJob(int employeeId, String firstName, String lastName, String email, String userId, String password,
-			String role, String gender, String active) {
+	public EmpJob(int ejId, int employeeId, int jobId, String recruited) {
 		super();
+		this.ejId = ejId;
 		this.employeeId = employeeId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.userId = userId;
-		this.password = password;
-		this.role = role;
-		this.gender = gender;
-		this.active = active;
+		this.jobId = jobId;
+		this.recruited = recruited;
 	}
 	
-	//parameterized constructor method without EmployeeId and active fields
+	//parameterized constructor method without EJId fields
 	
-	public EmpJob(String firstName, String lastName, String email, String userId, String password, String role,
-			String gender) {
+	public EmpJob(int employeeId, int jobId, String recruited) {
 		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.email = email;
-		this.userId = userId;
-		this.password = password;
-		this.role = role;
-		this.gender = gender;
+		this.employeeId = employeeId;
+		this.jobId = jobId;
+		this.recruited = recruited;
 	}
 	
 	//getter and setter methods
 	
+	public int getEjId() {
+		return ejId;
+	}
+	public void setEjId(int ejId) {
+		this.ejId = ejId;
+	}
 	public int getEmployeeId() {
 		return employeeId;
 	}
 	public void setEmployeeId(int employeeId) {
 		this.employeeId = employeeId;
 	}
-	public String getFirstName() {
-		return firstName;
+	public int getJobId() {
+		return jobId;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setJobId(int jobId) {
+		this.jobId = jobId;
 	}
-	public String getLastName() {
-		return lastName;
+	public String getRecruited() {
+		return recruited;
 	}
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setRecruited(String recruited) {
+		this.recruited = recruited;
 	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getUserId() {
-		return userId;
-	}
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getRole() {
-		return role;
-	}
-	public void setRole(String role) {
-		this.role = role;
-	}
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-	public String getActive() {
-		return active;
-	}
-	public void setActive(String active) {
-		this.active = active;
-	}
-
+	
+	//to string method
+	
 	@Override
 	public String toString() {
-		return "EmpJob [employeeId=" + employeeId + ", firstName=" + firstName + ", lastName=" + lastName + ", email="
-				+ email + ", userId=" + userId + ", password=" + password + ", role=" + role + ", gender=" + gender
-				+ ", active=" + active + "]";
+		return "EmpJob [ejId=" + ejId + ", employeeId=" + employeeId + ", jobId=" + jobId + ", recruited=" + recruited
+				+ "]";
 	}
 	
 	

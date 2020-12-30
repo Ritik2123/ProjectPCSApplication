@@ -15,6 +15,12 @@ public class EmployeeController {
 		empDao=new EmployeeDaoImpl();
 	}
 	
+	public Employee checkLogin(String userId, String password)
+	{
+		Employee emp=empDao.checkLogin(userId, password);
+		return emp;
+	}
+	
 	public List<Employee> getAllEmployees()
 	{
 		List<Employee> empList=empDao.getAllEmployees();

@@ -247,10 +247,10 @@ public class TestApp {
 		
 		TestApp test=new TestApp();
 		//test.testConnection();
-		//test.processMenuEmployee();
+		test.processMenuEmployee();
 		//test.processMenuSkill();
 		//test.processMenuJob();
-		test.processMenuEmpSkill();
+		//test.processMenuEmpSkill();
 	}
 
 }

@@ -6,6 +6,7 @@ import model.Employee;
 
 public interface IEmployeeDao {
 
+		Employee checkLogin(String userId, String password);
 		List<Employee> getAllEmployees();
 		void addEmployee(Employee emp);
 		Employee getEmployeeById(int id);
