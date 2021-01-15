@@ -67,7 +67,7 @@ public class EmpSkillExec {
 		try
 		{
 			BufferedReader reader=new BufferedReader(new InputStreamReader(System.in));
-			int empId, skillId, id=0;
+			int empId, skillId, id;
 			System.out.println("Enter EmpSkill Id whose record you want to update : ");
 			id=Integer.parseInt(reader.readLine());
 			EmpSkill emps=empsController.getEmpSkillById(id);
@@ -77,7 +77,7 @@ public class EmpSkillExec {
 			skillId=Integer.parseInt(reader.readLine());
 			emps.setEmployeeId(empId);
 			emps.setSkillId(skillId);
-			empsController.updateEmpSkill(id);
+			empsController.updateEmpSkill(emps);
 		}
 		catch(IOException ex)
 		{

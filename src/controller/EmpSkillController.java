@@ -32,9 +32,9 @@ public class EmpSkillController {
 		return emps;
 	}
 	
-	public void updateEmpSkill(int id)
+	public void updateEmpSkill(EmpSkill emps)
 	{
-		empsDao.updateEmpSkill(id);
+		empsDao.updateEmpSkill(emps);
 	}
 	
 	public void deleteEmpSkill(int id)

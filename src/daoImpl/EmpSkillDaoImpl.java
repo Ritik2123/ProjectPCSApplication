@@ -80,12 +80,12 @@ public class EmpSkillDaoImpl implements IEmpSkillDao{
 			ResultSet rst=pst.executeQuery();
 			if(rst!=null)
 			{
-				
 				while(rst.next())
 				{
-					emps.setEmployeeId(rst.getInt(1));
-					emps.setSkillId(rst.getInt(2));
-					emps.setExperience(rst.getInt(3));
+					emps.setEsId(rst.getInt(1));
+					emps.setEmployeeId(rst.getInt(2));
+					emps.setSkillId(rst.getInt(3));
+					emps.setExperience(rst.getInt(4));
 				}
 			}
 		}
@@ -97,12 +97,10 @@ public class EmpSkillDaoImpl implements IEmpSkillDao{
 	}
 
 	@Override
-	public void updateEmpSkill(int id) {
-		EmpSkill emps=new EmpSkill();
+	public void updateEmpSkill(EmpSkill emps) {
 		try
 		{
 			String query="UPDATE EmpSkill SET EmployeeId=?, SkillId=? WHERE ESId=?";
-			
 			PreparedStatement statement=conn.prepareStatement(query);
 			statement.setInt(1, emps.getEmployeeId());
 			statement.setInt(2, emps.getSkillId());

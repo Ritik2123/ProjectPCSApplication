@@ -8,7 +8,7 @@ import excDao.EmpSkillExec;
 import excDao.EmployeeExec;
 import excDao.JobExec;
 import excDao.SkillExec;
-
+import excDao.EmpJobExec;
 
 public class TestApp {
 	
@@ -243,14 +243,62 @@ public class TestApp {
 		}while(ch=='y' || ch=='Y');
 	}
 	
+	public void processMenuEmpJob()
+	{
+		EmpJobExec obj=new EmpJobExec();
+		Scanner sc=new Scanner(System.in);
+		int option=0;
+		char ch='y';
+		do
+		{
+			System.out.println("-------------CRUD Operation--------------");
+			System.out.println("1. View all EmpJob");
+			System.out.println("2. View single EmpJob");
+			System.out.println("3. Add EmpJob");
+			System.out.println("4. Update EmpJob");
+			System.out.println("5. Delete EmpJob");
+			System.out.println("6. Quit");
+			System.out.println("__________________________");
+			System.out.println("Enter your choice : ");
+			option=sc.nextInt();
+			switch(option)
+			{
+				case 1:
+					obj.getAllEmpJobs();
+					break;
+				case 2:
+					obj.getEmpJobById();
+					break;
+				case 3:
+					obj.addEmpJob();
+					break;
+				case 4:
+					obj.updateEmpJob();
+					break;
+				case 5:
+					obj.deleteEmpJob();
+					break;
+				case 6:
+					System.exit(0);
+					break;
+				default:
+					System.out.println("Wrong input!");
+					break;
+			}
+			System.out.println("Do you want to continue(y/n)?");
+			ch=sc.next().charAt(0);
+		}while(ch=='y' || ch=='Y');
+	}
+	
 	public static void main(String[] args) {
 		
 		TestApp test=new TestApp();
 		//test.testConnection();
-		test.processMenuEmployee();
+		//test.processMenuEmployee();
 		//test.processMenuSkill();
 		//test.processMenuJob();
-		//test.processMenuEmpSkill();
+		test.processMenuEmpSkill();
+		//test.processMenuEmpJob();
 	}
 
 }
